@@ -13,7 +13,7 @@ export function Footer() {
                 <Crosshair className="size-6 text-primary-foreground" />
               </div>
               <span className="text-xl font-bold">
-                SUPREMYX <span className="text-primary">PUBG CI</span>
+                SUPREMYX <span className="text-primary"> CI</span>
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
@@ -84,7 +84,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border/50 pt-8 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            © 2026 Elite PUBG CI - Plateforme officielle
+            © 2026 SUPREMYX - Plateforme officielle
           </p>
           <p className="text-sm text-muted-foreground">
             Fait avec ❤️ en Côte d&apos;Ivoire
