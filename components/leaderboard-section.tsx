@@ -22,16 +22,16 @@ interface Team {
 }
 
 const teams: Team[] = [
-  { rank: 1, name: "CI Warriors", points: 2450, wins: 12, kills: 186, matches: 20, trend: "same" },
-  { rank: 2, name: "Abidjan Legends", points: 2380, wins: 10, kills: 172, matches: 20, trend: "up" },
-  { rank: 3, name: "Phoenix Elite", points: 2290, wins: 9, kills: 165, matches: 20, trend: "up" },
-  { rank: 4, name: "Ivory Predators", points: 2180, wins: 8, kills: 158, matches: 20, trend: "down" },
-  { rank: 5, name: "Ghost Squad CI", points: 2050, wins: 7, kills: 145, matches: 19, trend: "up" },
-  { rank: 6, name: "Storm Riders", points: 1980, wins: 7, kills: 142, matches: 19, trend: "down" },
-  { rank: 7, name: "Cocody Snipers", points: 1920, wins: 6, kills: 138, matches: 18, trend: "same" },
-  { rank: 8, name: "Treichville FC", points: 1850, wins: 6, kills: 130, matches: 18, trend: "up" },
-  { rank: 9, name: "Yopougon Stars", points: 1780, wins: 5, kills: 125, matches: 18, trend: "down" },
-  { rank: 10, name: "Plateau Kings", points: 1720, wins: 5, kills: 120, matches: 17, trend: "same" },
+  { rank: 1, name: "CI Warriors", points: 0, wins: 0, kills: 0, matches: 0, trend: "same" },
+  { rank: 2, name: "Abidjan Legends", points: 0, wins: 0, kills: 0, matches: 0, trend: "up" },
+  { rank: 3, name: "Phoenix Elite", points: 0, wins: 0, kills: 0, matches: 0, trend: "up" },
+  { rank: 4, name: "Ivory Predators", points: 0, wins: 0, kills: 0, matches: 0, trend: "down" },
+  { rank: 5, name: "Ghost Squad CI", points: 0, wins: 0, kills: 0, matches: 0, trend: "up" },
+  { rank: 6, name: "Storm Riders", points: 0, wins: 0, kills: 0, matches: 0, trend: "down" },
+  { rank: 7, name: "Cocody Snipers", points: 0, wins: 0, kills: 0, matches: 0, trend: "same" },
+  { rank: 8, name: "Treichville FC", points: 0, wins: 0, kills: 0, matches: 0, trend: "up" },
+  { rank: 9, name: "Yopougon Stars", points: 0, wins: 0, kills: 0, matches: 0, trend: "down" },
+  { rank: 10, name: "Plateau Kings", points: 0, wins: 0, kills: 0, matches: 0, trend: "same" },
 ]
 
 export function LeaderboardSection() {
