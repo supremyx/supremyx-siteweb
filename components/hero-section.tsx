@@ -52,7 +52,7 @@ export function HeroSection({ onOpenRegistration }: HeroSectionProps) {
           {/* Stats */}
           <div className="mx-auto mt-16 grid max-w-3xl grid-cols-2 gap-6 sm:grid-cols-4">
             <StatCard icon={Users} value="200+" label="Joueurs" />
-            <StatCard icon={Trophy} value="2+" label="Tournois" />
+            <StatCard icon={Trophy} value="3+" label="Tournois" />
             <StatCard icon={Target} value="60+" label="Équipes" />
             <StatCard icon={Zap} value="4/7" label="Compétitions" />
           </div>
