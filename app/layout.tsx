@@ -7,7 +7,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Elite PUBG CI - Plateforme Esport',
+  title: 'SUPREMYX - Plateforme Esport',
   description: 'Plateforme esport PUBG Mobile de Côte d\'Ivoire - Tournois automatiques, classement en temps réel, compétition nationale',
   generator: 'v0.app',
   icons: {
