@@ -54,7 +54,7 @@ export function HeroSection({ onOpenRegistration }: HeroSectionProps) {
             <StatCard icon={Users} value="200+" label="Joueurs" />
             <StatCard icon={Trophy} value="2+" label="Tournois" />
             <StatCard icon={Target} value="60+" label="Équipes" />
-            <StatCard icon={Zap} value="3/7" label="Compétitions" />
+            <StatCard icon={Zap} value="4/7" label="Compétitions" />
           </div>
         </div>
       </div>
