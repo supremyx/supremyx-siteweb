@@ -16,7 +16,7 @@ export function Header() {
             <Crosshair className="size-6 text-primary-foreground" />
           </div>
           <span className="text-xl font-bold tracking-tight">
-            SUPREMYX <span className="text-primary"> CI</span>
+            SUPREMYX <span className="text-primary">CI</span>
           </span>
         </Link>
 
@@ -43,7 +43,7 @@ export function Header() {
 
         <div className="flex items-center gap-4">
           <Button asChild className="hidden sm:inline-flex">
-            <Link href="https://discord.gg/elitepubgci" target="_blank" rel="noopener noreferrer">
+            <Link href="https://discord.gg/bT49UQFUMt" target="_blank" rel="noopener noreferrer">
               Rejoindre Discord
             </Link>
           </Button>
@@ -83,7 +83,7 @@ export function Header() {
               Règles
             </Link>
             <Button asChild className="mt-2 w-full sm:hidden">
-              <Link href="https://discord.gg/elitepubgci" target="_blank" rel="noopener noreferrer">
+              <Link href="https://discord.gg/bT49UQFUMt" target="_blank" rel="noopener noreferrer">
                 Rejoindre Discord
               </Link>
             </Button>
