@@ -39,7 +39,7 @@
   --sidebar-ring: oklch(0.7 0.18 55);
 }
 
-.blue {
+.dark {
   --background: oklch(0.12 0.01 250);
   --foreground: oklch(0.98 0 0);
   --card: oklch(0.16 0.01 250);
