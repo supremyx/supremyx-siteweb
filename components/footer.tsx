@@ -74,7 +74,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="transition-colors hover:text-foreground"
                 >
-                  Instagram
+                  TikTok
                 </Link>
               </li>
             </ul>
