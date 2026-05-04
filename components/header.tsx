@@ -16,7 +16,7 @@ export function Header() {
             <Crosshair className="size-6 text-primary-foreground" />
           </div>
           <span className="text-xl font-bold tracking-tight">
-            ELITE <span className="text-primary">PUBG CI</span>
+            SUPREMYX <span className="text-primary"> CI</span>
           </span>
         </Link>
 
