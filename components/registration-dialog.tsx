@@ -71,7 +71,7 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
             Inscription équipe
           </DialogTitle>
           <DialogDescription>
-            Inscrivez votre équipe au prochain tournoi Elite PUBG CI
+            Inscrivez votre équipe au prochain tournoi PUBG Mobile de SUPREMYX
           </DialogDescription>
         </DialogHeader>
 
@@ -84,7 +84,7 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
               </FieldLabel>
               <Input
                 id="team"
-                placeholder="Ex: Phoenix Elite"
+                placeholder="Ex: Phoenix Squad"
                 value={formData.team}
                 onChange={(e) => setFormData({ ...formData, team: e.target.value })}
                 required
@@ -94,11 +94,11 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
             <Field>
               <FieldLabel htmlFor="leader">
                 <User className="mr-2 inline size-4" />
-                Nom du leader
+                Pseudo du leader (IGL)
               </FieldLabel>
               <Input
                 id="leader"
-                placeholder="Ex: Jean Kouassi"
+                placeholder="Ex: PunishMan"
                 value={formData.leader}
                 onChange={(e) => setFormData({ ...formData, leader: e.target.value })}
                 required
@@ -108,7 +108,7 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
             <Field>
               <FieldLabel htmlFor="pubgId">
                 <Gamepad2 className="mr-2 inline size-4" />
-                ID PUBG Mobile
+                UID PUBG Mobile
               </FieldLabel>
               <Input
                 id="pubgId"
