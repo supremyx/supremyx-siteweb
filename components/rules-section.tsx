@@ -5,12 +5,12 @@ const rules = [
   {
     icon: Users,
     title: "Format Squad",
-    description: "Équipes de 4 joueurs maximum. Les membres peuvent être remplacés entre les tournois.",
+    description: "Équipes de 6 joueurs maximum (4 principaux et 2 remplaçants). Les membres peuvent être remplacés entre les tournois.",
   },
   {
     icon: Clock,
     title: "Ponctualité",
-    description: "Présence obligatoire 15 minutes avant le début du match. Retards non tolérés.",
+    description: "Présence obligatoire 10 minutes avant le début du match. Retards non tolérés.",
   },
   {
     icon: Shield,
@@ -20,7 +20,7 @@ const rules = [
   {
     icon: Trophy,
     title: "Points",
-    description: "Système de points basé sur le placement (1er: 15pts, 2ème: 12pts...) + kills (1pt chacun).",
+    description: "Système de points basé sur le placement (1er: 10pts, 2ème: 6pts, 3ème: 5pts...) + kills (1pt chacun).",
   },
   {
     icon: AlertTriangle,
