@@ -1,7 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { Crosshair, Menu, X } from "lucide-react"
+import Image from "next/image"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 
@@ -13,7 +14,13 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-lg bg-primary">
-            <Crosshair className="size-6 text-primary-foreground" />
+            <Image 
+              src="/file_00000000c518724687a64e9f7e791067.png" 
+              alt="SUPREMYX CI Logo" 
+              width={40} 
+              height={40}
+              className="size-6"
+            />
           </div>
           <span className="text-xl font-bold tracking-tight">
             SUPREMYX <span className="text-primary">CI</span>
