@@ -84,7 +84,7 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
               </FieldLabel>
               <Input
                 id="team"
-                placeholder="Ex: Phoenix Squad"
+                placeholder="Ex: CI Warriors"
                 value={formData.team}
                 onChange={(e) => setFormData({ ...formData, team: e.target.value })}
                 required
@@ -94,7 +94,7 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
             <Field>
               <FieldLabel htmlFor="leader">
                 <User className="mr-2 inline size-4" />
-                Pseudo du leader (IGL)
+                Pseudo du leader
               </FieldLabel>
               <Input
                 id="leader"
