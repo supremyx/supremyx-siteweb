@@ -62,17 +62,6 @@ const tournaments: Tournament[] = [
     status: "upcoming",
     type: "squad",
   },
-  {
-    id: "5",
-    name: "NexDominion Grand Prix CI",
-    date: "BIENTÔT",
-    time: "",
-    prize: "",
-    slots: 100,
-    registered: 0,
-    status: "upcoming",
-    type: "squad",
-  },
 ]
 
 interface TournamentsSectionProps {
