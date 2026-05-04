@@ -13,7 +13,7 @@ export function Footer() {
                 <Crosshair className="size-6 text-primary-foreground" />
               </div>
               <span className="text-xl font-bold">
-                ELITE <span className="text-primary">PUBG CI</span>
+                SUPREMYX <span className="text-primary">PUBG CI</span>
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
@@ -49,7 +49,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <Link
-                  href="https://discord.gg/elitepubgci"
+                  href="https://discord.gg/bT49UQFUMt"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors hover:text-foreground"
