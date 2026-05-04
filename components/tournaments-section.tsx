@@ -63,15 +63,7 @@ const tournaments: Tournament[] = [
     type: "squad",
   },
   {
-    id: "5",
-    name: "Weekend Warriors",
-    date: "BIENTÔT",
-    time: "",
-    prize: "",
-    slots: 100,
-    registered: 0,
-    status: "upcoming",
-    type: "squad",
+    
   },
   {
     id: "6",
