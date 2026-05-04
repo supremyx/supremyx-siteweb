@@ -42,7 +42,7 @@ const tournaments: Tournament[] = [
   },
   {
     id: "3",
-    name: "Grand Prix CI",
+    name: "",
     date: "10 Mai 2026",
     time: "14h00",
     prize: "200,000 FCFA",
@@ -75,8 +75,8 @@ const tournaments: Tournament[] = [
   },
   {
     id: "6",
-    name: "Rookie Challenge",
-    date: "15 Mai 2026",
+    name: "Grand Prix CI",
+    date: "EN COURS",
     time: "16h00",
     prize: "30,000 FCFA",
     slots: 100,
