@@ -17,7 +17,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-              La première plateforme esport PUBG Mobile de Côte d&apos;Ivoire. Tournois automatiques, classement en temps réel, et une communauté de passionnés.
+              La première plateforme Esport PUBG Mobile de Côte d&apos;Ivoire. Tournois automatiques, classement en temps réel, et une communauté de passionnés.
             </p>
           </div>
 
@@ -87,7 +87,7 @@ export function Footer() {
             © 2026 SUPREMYX - Plateforme officielle
           </p>
           <p className="text-sm text-muted-foreground">
-            Fait avec ❤️ en Côte d&apos;Ivoire
+            Fait en Côte d&apos;Ivoire
           </p>
         </div>
       </div>
