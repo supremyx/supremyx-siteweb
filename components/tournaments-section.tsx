@@ -63,9 +63,6 @@ const tournaments: Tournament[] = [
     type: "squad",
   },
   {
-    
-  },
-  {
     id: "6",
     name: "NexDominion Grand Prix CI",
     date: "BIENTÔT",
