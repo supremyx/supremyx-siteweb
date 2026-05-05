@@ -59,7 +59,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="https://facebook.com/elitepubgci"
+                  href="https://www.facebook.com/share/1CaMzJknH6/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors hover:text-foreground"
@@ -69,7 +69,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="https://instagram.com/elitepubgci"
+                  href="https://www.tiktok.com/@supremyxci"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors hover:text-foreground"
