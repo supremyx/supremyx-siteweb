@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Crosshair } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -10,7 +10,13 @@ export function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg bg-primary">
-                <Crosshair className="size-6 text-primary-foreground" />
+                <Image 
+                  src="/file_00000000c518724687a64e9f7e791067.png" 
+                  alt="SUPREMYX Logo" 
+                  width={24}
+                  height={24}
+                  className="size-6"
+                />
               </div>
               <span className="text-xl font-bold">
                 SUPREMYX <span className="text-primary"> CI</span>
