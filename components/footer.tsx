@@ -15,7 +15,7 @@ export function Footer() {
                   alt="SUPREMYX Logo" 
                   width={40}
                   height={40}
-                  className="size-10"
+                  className="size-8"
                 />
               </div>
               <span className="text-xl font-bold">
