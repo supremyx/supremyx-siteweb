@@ -13,8 +13,8 @@ export function Footer() {
                 <Image 
                   src="/file_00000000c518724687a64e9f7e791067.png" 
                   alt="SUPREMYX Logo" 
-                  width={24}
-                  height={24}
+                  width={40}
+                  height={40}
                   className="size-6"
                 />
               </div>
