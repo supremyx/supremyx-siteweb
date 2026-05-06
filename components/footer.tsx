@@ -37,6 +37,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="#equipes" className="transition-colors hover:text-foreground">
+                  Équipes
+                </Link>
+              </li>
+              <li>
                 <Link href="#classement" className="transition-colors hover:text-foreground">
                   Classement
                 </Link>
@@ -81,6 +86,16 @@ export function Footer() {
                   className="transition-colors hover:text-foreground"
                 >
                   TikTok
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://discord.gg/bT49UQFUMt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-foreground"
+                >
+                  WhatsApp
                 </Link>
               </li>
             </ul>
