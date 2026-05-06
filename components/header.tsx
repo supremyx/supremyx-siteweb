@@ -17,8 +17,8 @@ export function Header() {
             <Image 
               src="/file_00000000c518724687a64e9f7e791067.png" 
               alt="SUPREMYX CI Logo" 
-              width={50} 
-              height={50}
+              width={55} 
+              height={55}
               className="size-6"
             />
           </div>
