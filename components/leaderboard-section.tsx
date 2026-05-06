@@ -22,16 +22,26 @@ interface Team {
 }
 
 const teams: Team[] = [
-  { rank: 1, name: "CI Warriors", points: 0, wins: 0, kills: 0, matches: 0, trend: "same" },
-  { rank: 2, name: "Abidjan Legends", points: 0, wins: 0, kills: 0, matches: 0, trend: "up" },
-  { rank: 3, name: "Phoenix Elite", points: 0, wins: 0, kills: 0, matches: 0, trend: "up" },
-  { rank: 4, name: "Ivory Predators", points: 0, wins: 0, kills: 0, matches: 0, trend: "down" },
-  { rank: 5, name: "Ghost Squad CI", points: 0, wins: 0, kills: 0, matches: 0, trend: "up" },
-  { rank: 6, name: "Storm Riders", points: 0, wins: 0, kills: 0, matches: 0, trend: "down" },
-  { rank: 7, name: "Cocody Snipers", points: 0, wins: 0, kills: 0, matches: 0, trend: "same" },
-  { rank: 8, name: "Treichville FC", points: 0, wins: 0, kills: 0, matches: 0, trend: "up" },
-  { rank: 9, name: "Yopougon Stars", points: 0, wins: 0, kills: 0, matches: 0, trend: "down" },
-  { rank: 10, name: "Plateau Kings", points: 0, wins: 0, kills: 0, matches: 0, trend: "same" },
+  { rank: 1, name: "", points: 0, wins: 0, kills: 0, matches: 0, trend: "same" },
+  { rank: 2, name: "", points: 0, wins: 0, kills: 0, matches: 0, trend: "up" },
+  { rank: 3, name: "", points: 0, wins: 0, kills: 0, matches: 0, trend: "up" },
+  { rank: 4, name: "", points: 0, wins: 0, kills: 0, matches: 0, trend: "down" },
+  { rank: 5, name: "", points: 0, wins: 0, kills: 0, matches: 0, trend: "up" },
+  { rank: 6, name: "", points: 0, wins: 0, kills: 0, matches: 0, trend: "down" },
+  { rank: 7, name: "", points: 0, wins: 0, kills: 0, matches: 0, trend: "same" },
+  { rank: 8, name: "", points: 0, wins: 0, kills: 0, matches: 0, trend: "up" },
+  { rank: 9, name: "", points: 0, wins: 0, kills: 0, matches: 0, trend: "down" },
+  { rank: 10, name: "", points: 0, wins: 0, kills: 0, matches: 0, trend: "same" },
+  { rank: 11, name: "", points: 0, wins: 0, kills: 0, matches: 0, trend: "same" },
+  { rank: 12, name: "", points: 0, wins: 0, kills: 0, matches: 0, trend: "up" },
+  { rank: 13, name: "", points: 0, wins: 0, kills: 0, matches: 0, trend: "up" },
+  { rank: 14, name: "", points: 0, wins: 0, kills: 0, matches: 0, trend: "down" },
+  { rank: 15, name: "", points: 0, wins: 0, kills: 0, matches: 0, trend: "up" },
+  { rank: 16, name: "", points: 0, wins: 0, kills: 0, matches: 0, trend: "down" },
+  { rank: 17, name: "", points: 0, wins: 0, kills: 0, matches: 0, trend: "same" },
+  { rank: 18, name: "", points: 0, wins: 0, kills: 0, matches: 0, trend: "up" },
+  { rank: 19, name: "", points: 0, wins: 0, kills: 0, matches: 0, trend: "down" },
+  { rank: 20, name: "", points: 0, wins: 0, kills: 0, matches: 0, trend: "same" },
 ]
 
 export function LeaderboardSection() {
@@ -67,7 +77,7 @@ export function LeaderboardSection() {
             Classement <span className="text-primary">Live</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Les meilleures équipes de la saison 2026
+            Les meilleures équipes claniques de la saison 2026
           </p>
         </div>
 
