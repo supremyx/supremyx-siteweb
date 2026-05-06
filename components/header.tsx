@@ -29,25 +29,25 @@ export function Header() {
 
         <nav className="hidden items-center gap-8 md:flex">
           <Link
-            href="#tournois"
+            href="/#tournois"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Tournois
           </Link>
           <Link
-            href="#equipes"
+            href="/equipes"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Équipes
           </Link>
           <Link
-            href="#classement"
+            href="/classement"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Classement
           </Link>
           <Link
-            href="#regles"
+            href="/regles"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Règles
@@ -75,21 +75,28 @@ export function Header() {
         <div className="border-t border-border/50 bg-card md:hidden">
           <nav className="flex flex-col gap-1 p-4">
             <Link
-              href="#tournois"
+              href="/#tournois"
               className="rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary"
               onClick={() => setMobileMenuOpen(false)}
             >
               Tournois
             </Link>
             <Link
-              href="#classement"
+              href="/equipes"
+              className="rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Équipes
+            </Link>
+            <Link
+              href="/classement"
               className="rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary"
               onClick={() => setMobileMenuOpen(false)}
             >
               Classement
             </Link>
             <Link
-              href="#regles"
+              href="/regles"
               className="rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary"
               onClick={() => setMobileMenuOpen(false)}
             >
