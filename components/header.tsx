@@ -35,6 +35,12 @@ export function Header() {
             Tournois
           </Link>
           <Link
+            href="#equipes"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Equipes
+          </Link>
+          <Link
             href="#classement"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
