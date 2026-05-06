@@ -29,7 +29,7 @@ export function Header() {
 
         <nav className="hidden items-center gap-8 md:flex">
           <Link
-            href="/#tournois"
+            href="/tournois"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Tournois
@@ -45,6 +45,12 @@ export function Header() {
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Classement
+          </Link>
+          <Link
+            href="/recompenses"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Récompenses
           </Link>
           <Link
             href="/regles"
@@ -75,7 +81,7 @@ export function Header() {
         <div className="border-t border-border/50 bg-card md:hidden">
           <nav className="flex flex-col gap-1 p-4">
             <Link
-              href="/#tournois"
+              href="/tournois"
               className="rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -94,6 +100,13 @@ export function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Classement
+            </Link>
+            <Link
+              href="/recompenses"
+              className="rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Récompenses
             </Link>
             <Link
               href="/regles"
