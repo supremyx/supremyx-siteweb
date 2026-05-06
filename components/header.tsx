@@ -19,7 +19,7 @@ export function Header() {
               alt="SUPREMYX CI Logo" 
               width={40} 
               height={40}
-              className="size-6"
+              className="size-8"
             />
           </div>
           <span className="text-xl font-bold tracking-tight">
