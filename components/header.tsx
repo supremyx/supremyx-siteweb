@@ -38,7 +38,7 @@ export function Header() {
             href="#equipes"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
-            Equipes
+            Équipes
           </Link>
           <Link
             href="#classement"
