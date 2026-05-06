@@ -45,7 +45,7 @@ const teams: Team[] = [
     wins: 0,
     kills: 0,
     rating: 0,
-    featured: false,
+    featured: true,
   },
   {
     id: "4",
