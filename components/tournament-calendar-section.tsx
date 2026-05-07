@@ -127,7 +127,7 @@ export function TournamentCalendarSection() {
   const getTypeBadgeColor = (type: TournamentEvent["type"]) => {
     switch (type) {
       case "solo":
-        return "bg-green-500/20 text-blue-400 border-green-500/30"
+        return "bg-yellow-500/20 text-blue-400 border-yellow-500/30"
       case "duo":
         return "bg-blue-500/20 text-green-400 border-blue-500/30"
       case "squad":
@@ -180,7 +180,7 @@ export function TournamentCalendarSection() {
                   key={i}
                   className={cn(
                     "size-1.5 sm:size-2 rounded-full",
-                    t.type === "solo" && "bg-blue-500",
+                    t.type === "solo" && "bg-yellow-500",
                     t.type === "duo" && "bg-green-500",
                     t.type === "squad" && "bg-primary"
                   )}
@@ -256,7 +256,7 @@ export function TournamentCalendarSection() {
               {/* Legend */}
               <div className="flex flex-wrap items-center justify-center gap-4 mt-6 pt-4 border-t">
                 <div className="flex items-center gap-2">
-                  <div className="size-3 rounded-full bg-blue-500" />
+                  <div className="size-3 rounded-full bg-yellow-500" />
                   <span className="text-sm text-muted-foreground">Solo</span>
                 </div>
                 <div className="flex items-center gap-2">
