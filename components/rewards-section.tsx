@@ -44,7 +44,7 @@ const rewards: Reward[] = [
   },
   {
     id: "4",
-    title: "MVP de ligue",
+    title: "MVP de la ligue",
     description: "Meilleur joueur avec le plus de kills",
     prize: "5000 FCFA",
     icon: <Star className="size-6" />,
@@ -142,13 +142,13 @@ export function RewardsSection() {
           </Card>
           <Card className="text-center">
             <CardContent className="pt-6">
-              <div className="text-3xl font-bold text-primary">3</div>
+              <div className="text-3xl font-bold text-primary">4+</div>
               <div className="text-sm text-muted-foreground">Types de tournois</div>
             </CardContent>
           </Card>
           <Card className="text-center">
             <CardContent className="pt-6">
-              <div className="text-3xl font-bold text-primary">9</div>
+              <div className="text-3xl font-bold text-primary">10+</div>
               <div className="text-sm text-muted-foreground">Récompenses</div>
             </CardContent>
           </Card>
