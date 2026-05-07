@@ -131,7 +131,7 @@ export function TournamentCalendarSection() {
       case "duo":
         return "bg-purple-500/20 text-green-400 border-purple-500/30"
       case "squad":
-        return "bg-brown-500/20 text-primary border-brown-500/30"
+        return "bg-brown/20 text-primary border-brown/30"
     }
   }
 
