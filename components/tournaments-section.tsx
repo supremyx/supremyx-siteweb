@@ -37,7 +37,7 @@ const tournaments: Tournament[] = [
     prize: "240 UC",
     slots: 50,
     registered: 0,
-    status: "open",
+    status: "full",
     type: "duo",
   },
   {
@@ -48,7 +48,7 @@ const tournaments: Tournament[] = [
     prize: "120 UC",
     slots: 100,
     registered: 0,
-    status: "open",
+    status: "live",
     type: "solo",
   },
   {
