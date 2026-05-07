@@ -127,11 +127,11 @@ export function TournamentCalendarSection() {
   const getTypeBadgeColor = (type: TournamentEvent["type"]) => {
     switch (type) {
       case "solo":
-        return "bg-yellow-500/20 text-blue-400 border-yellow-500/30"
+        return "bg-yellow-500/20 text-yellow-400 border-yellow-500/30"
       case "duo":
-        return "bg-purple-500/20 text-green-400 border-purple-500/30"
+        return "bg-pink-500/20 text-pink-400 border-pink-500/30"
       case "squad":
-        return "bg-pink-500/20 text-primary border-pink-500/30"
+        return "bg-purple-500/20 text-purple-400 border-purple-500/30"
     }
   }
 
@@ -181,8 +181,8 @@ export function TournamentCalendarSection() {
                   className={cn(
                     "size-1.5 sm:size-2 rounded-full",
                     t.type === "solo" && "bg-yellow-500",
-                    t.type === "duo" && "bg-purple-500",
-                    t.type === "squad" && "bg-pink-500"
+                    t.type === "duo" && "bg-pink-500",
+                    t.type === "squad" && "bg-purple-500"
                   )}
                 />
               ))}
@@ -260,11 +260,11 @@ export function TournamentCalendarSection() {
                   <span className="text-sm text-muted-foreground">Solo</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="size-3 rounded-full bg-purple-500" />
+                  <div className="size-3 rounded-full bg-pink-500" />
                   <span className="text-sm text-muted-foreground">Duo</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="size-3 rounded-full bg-pink-500" />
+                  <div className="size-3 rounded-full bg-purple-500" />
                   <span className="text-sm text-muted-foreground">Squad</span>
                 </div>
               </div>
