@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
+import { TournamentsSection } from "@/components/tournaments-section"
 import { TournamentCalendarSection } from "@/components/tournament-calendar-section"
 import { Footer } from "@/components/footer"
 import { RegistrationDialog } from "@/components/registration-dialog"
@@ -16,6 +17,7 @@ export default function Home() {
       
       <main className="flex-1">
         <HeroSection onOpenRegistration={() => setRegistrationOpen(true)} />
+        <TournamentsSection onOpenRegistration={() => setRegistrationOpen(true)} />
         <TournamentCalendarSection />
       </main>
 
