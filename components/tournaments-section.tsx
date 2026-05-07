@@ -23,7 +23,7 @@ const tournaments: Tournament[] = [
     name: "Clan Battles League CI",
     date: "16 Mai 2026",
     time: "20h00",
-    prize: "15000 FCFA",
+    prize: "20000 FCFA",
     slots: 20,
     registered: 0,
     status: "open",
