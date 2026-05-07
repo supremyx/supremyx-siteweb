@@ -122,7 +122,7 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
 
             <Field>
               <FieldLabel htmlFor="phonenumber">
-                <Gamepad2 className="mr-2 inline size-4" />
+                <Phone className="mr-2 inline size-4" />
                 Numéro Mobile Money
               </FieldLabel>
               <Input
