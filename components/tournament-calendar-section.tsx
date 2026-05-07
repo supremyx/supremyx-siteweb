@@ -21,7 +21,7 @@ const tournamentEvents: TournamentEvent[] = [
     name: "Clan Battles League CI",
     time: "20h00",
     type: "squad",
-    prize: "15000 FCFA",
+    prize: "20000 FCFA",
   },
   {
     date: new Date(2026, 4, 19),
