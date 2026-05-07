@@ -32,7 +32,7 @@ export function Header() {
             href="/tournois"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
-            Tournois
+            
           </Link>
           <Link
             href="/equipes"
