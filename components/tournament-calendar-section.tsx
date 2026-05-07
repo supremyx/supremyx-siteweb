@@ -182,7 +182,7 @@ export function TournamentCalendarSection() {
                     "size-1.5 sm:size-2 rounded-full",
                     t.type === "solo" && "bg-yellow-500",
                     t.type === "duo" && "bg-purple-500",
-                    t.type === "squad" && "bg-brown-500"
+                    t.type === "squad" && "bg-pink-500"
                   )}
                 />
               ))}
@@ -264,7 +264,7 @@ export function TournamentCalendarSection() {
                   <span className="text-sm text-muted-foreground">Duo</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="size-3 rounded-full bg-brown-500" />
+                  <div className="size-3 rounded-full bg-pink-500" />
                   <span className="text-sm text-muted-foreground">Squad</span>
                 </div>
               </div>
