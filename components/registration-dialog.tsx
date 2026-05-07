@@ -25,6 +25,7 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
     team: "",
     leader: "",
     pubgId: "",
+    phonenumber: "",
   })
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -39,7 +40,7 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
     // Reset after showing success
     setTimeout(() => {
       setFormState("idle")
-      setFormData({ team: "", leader: "", pubgId: "" })
+      setFormData({ team: "", leader: "", pubgId: "", phonenumber: "" })
       onOpenChange(false)
     }, 2000)
   }
@@ -115,6 +116,20 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
                 placeholder="Ex: 5XXXXXXXXX"
                 value={formData.pubgId}
                 onChange={(e) => setFormData({ ...formData, pubgId: e.target.value })}
+                required
+              />
+            </Field>
+
+            <Field>
+              <FieldLabel htmlFor="phonenumber">
+                <Gamepad2 className="mr-2 inline size-4" />
+                Numéro Mobile Money
+              </FieldLabel>
+              <Input
+                id="phonenumber"
+                placeholder="Ex: 0000000000"
+                value={formData.phonenumber}
+                onChange={(e) => setFormData({ ...formData, phonenumber: e.target.value })}
                 required
               />
             </Field>
