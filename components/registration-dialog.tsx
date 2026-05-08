@@ -95,7 +95,7 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
             <Field>
               <FieldLabel htmlFor="leader">
                 <User className="mr-2 inline size-4" />
-                Pseudo du leader
+                Pseudo du joueur
               </FieldLabel>
               <Input
                 id="leader"
