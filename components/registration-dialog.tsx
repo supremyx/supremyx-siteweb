@@ -23,7 +23,7 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
   const [formState, setFormState] = useState<"idle" | "loading" | "success">("idle")
   const [formData, setFormData] = useState({
     team: "",
-    leader: "",
+    player: "",
     pubgId: "",
     phonenumber: "",
   })
@@ -40,7 +40,7 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
     // Reset after showing success
     setTimeout(() => {
       setFormState("idle")
-      setFormData({ team: "", leader: "", pubgId: "", phonenumber: "" })
+      setFormData({ team: "", player: "", pubgId: "", phonenumber: "" })
       onOpenChange(false)
     }, 2000)
   }
@@ -93,15 +93,15 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
             </Field>
 
             <Field>
-              <FieldLabel htmlFor="leader">
+              <FieldLabel htmlFor="player">
                 <User className="mr-2 inline size-4" />
                 Pseudo du joueur
               </FieldLabel>
               <Input
-                id="leader"
+                id="player"
                 placeholder="Ex: RushMan"
-                value={formData.leader}
-                onChange={(e) => setFormData({ ...formData, leader: e.target.value })}
+                value={formData.player}
+                onChange={(e) => setFormData({ ...formData, player: e.target.value })}
                 required
               />
             </Field>
