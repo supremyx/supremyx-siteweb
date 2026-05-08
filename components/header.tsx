@@ -23,7 +23,7 @@ export function Header() {
             />
           </div>
           <span className="text-xl font-bold tracking-tight">
-            SUPREMYX <span className="text-primary">PRIME</span>
+            SUPREMYX <span className="text-primary">CI</span>
           </span>
         </Link>
 
