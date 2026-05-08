@@ -99,7 +99,7 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
               </FieldLabel>
               <Input
                 id="leader"
-                placeholder="Ex: PunishMan"
+                placeholder="Ex: RushMan"
                 value={formData.leader}
                 onChange={(e) => setFormData({ ...formData, leader: e.target.value })}
                 required
@@ -127,7 +127,7 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
               </FieldLabel>
               <Input
                 id="phonenumber"
-                placeholder="Ex: 0000000000"
+                placeholder="Ex: +225XXXXXXXXXX"
                 value={formData.phonenumber}
                 onChange={(e) => setFormData({ ...formData, phonenumber: e.target.value })}
                 required
