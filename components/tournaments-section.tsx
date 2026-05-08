@@ -172,7 +172,7 @@ function TournamentCard({
 
         <Button
           className="w-full"
-          disabled={tournament.status === "full" || tournament.status === "live"}
+          disabled={tournament.status === "full" || tournament.status === "live" || tournament.status === "upcoming"}
           onClick={onRegister}
         >
           {tournament.status === "full"
