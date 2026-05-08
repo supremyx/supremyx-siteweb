@@ -33,7 +33,24 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
     setFormState("loading")
 
     // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    import { supabase } from '@/lib/supabase'
+
+const { error } = await supabase
+  .from('teams')
+  .insert([
+    {
+      team_name: formData.teamName,
+      player: formData.player,
+      pubg_id: formData.pubgId,
+      phone: formData.phone,
+    }
+  ])
+
+if (error) {
+  alert("Erreur ❌")
+} else {
+  alert("Inscription réussie ✅")
+}
 
     setFormState("success")
 
