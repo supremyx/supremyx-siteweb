@@ -79,7 +79,7 @@ const tournaments: Tournament[] = [
     date: "",
     time: "",
     prize: "",
-    slots: Illimité,
+    slots: 100,
     registered: 0,
     status: "upcoming",
     type: "squad",
