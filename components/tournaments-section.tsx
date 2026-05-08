@@ -21,7 +21,7 @@ const tournaments: Tournament[] = [
   {
     id: "1",
     name: "Clan Battles League CI (CBL1)",
-    date: "8 Mai 2026",
+    date: "23 Mai 2026",
     time: "20h00",
     prize: "20000 FCFA",
     slots: 20,
