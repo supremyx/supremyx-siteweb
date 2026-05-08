@@ -199,7 +199,7 @@ export function RewardsSection() {
             <div className="flex-1">
               <h3 className="text-lg font-semibold">Comment recevoir vos récompenses ?</h3>
               <p className="mt-1 text-muted-foreground">
-                Les UC sont envoyés directement sur votre compte PUBG Mobile dans les 24h suivant la fin du tournoi. 
+                Les UC sont envoyés directement sur votre compte PUBG Mobile dans les 48h suivant la fin du tournoi. 
                 Assurez-vous que votre UID PUBG est correct lors de l&apos;inscription !
               </p>
               <p className="mt-1 text-muted-foreground">
