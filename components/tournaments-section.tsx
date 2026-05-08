@@ -76,10 +76,10 @@ const tournaments: Tournament[] = [
   {
     id: "6",
     name: "NexDominion League Africa",
-    date: "Bientôt",
+    date: "",
     time: "",
     prize: "",
-    slots: ,
+    slots: ∞,
     registered: 0,
     status: "upcoming",
     type: "squad",
