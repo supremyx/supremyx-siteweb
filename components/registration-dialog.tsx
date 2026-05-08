@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Field, FieldLabel, FieldGroup } from "@/components/ui/field"
 import { Spinner } from "@/components/ui/spinner"
-import { CheckCircle, Users, User, Gamepad2 } from "lucide-react"
+import { CheckCircle, Users, User, Gamepad2, Phone } from "lucide-react"
 
 interface RegistrationDialogProps {
   open: boolean
@@ -122,7 +122,7 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
 
             <Field>
               <FieldLabel htmlFor="phonenumber">
-                <User className="mr-2 inline size-4" />
+                <Phone className="mr-2 inline size-4" />
                 Numéro Mobile Money
               </FieldLabel>
               <Input
