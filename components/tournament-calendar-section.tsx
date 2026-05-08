@@ -17,21 +17,21 @@ interface TournamentEvent {
 
 const tournamentEvents: TournamentEvent[] = [
   {
-    date: new Date(2026, 4, 16),
+    date: new Date(2026, 4, 23),
     name: "Clan Battles League CI",
     time: "20h00",
     type: "squad",
     prize: "20000 FCFA",
   },
   {
-    date: new Date(2026, 4, 19),
+    date: new Date(2026, 4, 26),
     name: "Tournois Duo Masters",
     time: "20h00",
     type: "duo",
     prize: "6000 FCFA",
   },
   {
-    date: new Date(2026, 4, 21),
+    date: new Date(2026, 4, 28),
     name: "Tournois Solo Champion",
     time: "20h00",
     type: "solo",
