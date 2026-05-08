@@ -21,7 +21,7 @@ const tournaments: Tournament[] = [
   {
     id: "1",
     name: "Clan Battles League CI (CBL1)",
-    date: "16 Mai 2026",
+    date: "23 Mai 2026",
     time: "20h00",
     prize: "20000 FCFA",
     slots: 20,
@@ -32,7 +32,7 @@ const tournaments: Tournament[] = [
   {
     id: "2",
     name: "Tournois Duo Masters",
-    date: "19 Mai 2026",
+    date: "26 Mai 2026",
     time: "20h00",
     prize: "6000 FCFA",
     slots: 50,
@@ -43,7 +43,7 @@ const tournaments: Tournament[] = [
   {
     id: "3",
     name: "Tournois Solo Champion",
-    date: "21 Mai 2026",
+    date: "28 Mai 2026",
     time: "20h00",
     prize: "3000 FCFA",
     slots: 100,
