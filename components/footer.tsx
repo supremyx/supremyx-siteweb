@@ -19,7 +19,7 @@ export function Footer() {
                 />
               </div>
               <span className="text-xl font-bold">
-                SUPREMYX <span className="text-primary">PRIME</span>
+                SUPREMYX <span className="text-primary">CI</span>
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
