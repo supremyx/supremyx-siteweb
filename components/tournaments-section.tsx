@@ -20,7 +20,7 @@ interface Tournament {
 const tournaments: Tournament[] = [
   {
     id: "1",
-    name: "Clan Battles League CI",
+    name: "Clan Battles League CI (CBL1)",
     date: "16 Mai 2026",
     time: "20h00",
     prize: "20000 FCFA",
@@ -64,7 +64,7 @@ const tournaments: Tournament[] = [
   },
   {
     id: "5",
-    name: "Elite Rush League CI",
+    name: "Elite Rush League CI (ERL1)",
     date: "Bientôt",
     time: "",
     prize: "",
@@ -80,7 +80,7 @@ const tournaments: Tournament[] = [
     time: "",
     prize: "",
     slots: Infinity,
-    registered: 0,
+    registered: 10000,
     status: "upcoming",
     type: "squad",
   },
