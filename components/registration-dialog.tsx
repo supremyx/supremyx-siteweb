@@ -29,6 +29,7 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
   })
 
   import { supabase } from '@/lib/supabase'
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setFormState("loading")
