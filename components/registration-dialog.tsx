@@ -28,13 +28,13 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
     phonenumber: "",
   })
 
+  import { supabase } from '@/lib/supabase'
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setFormState("loading")
 
     // Simulate API call
-    import { supabase } from '@/lib/supabase'
-
+    
 const { error } = await supabase
   .from('teams')
   .insert([
