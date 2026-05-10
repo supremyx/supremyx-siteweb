@@ -37,7 +37,7 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
     // Simulate API call
     
 const { error } = await supabase
-  .from('Inscription sur Supremyx')
+  .from('teams')
   .insert([
     {
       team_name: formData.team,
