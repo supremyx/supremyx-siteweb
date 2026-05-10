@@ -40,7 +40,7 @@ const { error } = await supabase
   .from('Inscription sur Supremyx')
   .insert([
     {
-      team_name: formData.teamName,
+      team_name: formData.team,
       player: formData.player,
       pubg_id: formData.pubgId,
       phone: formData.phone,
