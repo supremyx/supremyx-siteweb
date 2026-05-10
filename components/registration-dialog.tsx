@@ -1,5 +1,7 @@
 "use client"
 
+import { supabase } from '@/lib/supabase'
+
 import { useState } from "react"
 import {
   Dialog,
@@ -27,8 +29,6 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
     pubgId: "",
     phonenumber: "",
   })
-
-  import { supabase } from '@/lib/supabase'
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
