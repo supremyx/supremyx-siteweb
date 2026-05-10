@@ -48,6 +48,7 @@ const { error } = await supabase
   ])
 
 if (error) {
+  console.error("SUPABASE ERROR:", error)
   alert("Erreur ❌")
 } else {
   alert("Inscription réussie ✅")
