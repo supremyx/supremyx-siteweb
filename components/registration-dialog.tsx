@@ -51,6 +51,7 @@ if (error) {
   console.error("SUPABASE ERROR:", error)
   alert("Erreur ❌")
 } else {
+  console.log("SUCCESS:", data)
   alert("Inscription réussie ✅")
 }
 
