@@ -55,7 +55,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="https://www.facebook.com/share/1CaMzJknH6/"
+                  href="https://www.facebook.com/supremyx"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors hover:text-foreground"
@@ -71,6 +71,16 @@ export function Footer() {
                   className="transition-colors hover:text-foreground"
                 >
                   TikTok
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://youtube.com/@supremyx-ci"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-foreground"
+                >
+                  YouTube
                 </Link>
               </li>
               <li>
