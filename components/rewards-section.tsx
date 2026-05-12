@@ -69,9 +69,18 @@ const rewards: Reward[] = [
     tier: "gold",
     category: "Solo",
   },
-  {
+    {
     id: "7",
-    title: "Fidélité SUPREMYX",
+    title: "Fidélité SUPREMYX lv1",
+    description: "Participation mensuelle à plus de matchs",
+    prize: "Bonus mystère",
+    icon: <Gift className="size-6" />,
+    tier: "special",
+    category: "Bonus",
+  },
+  {
+    id: "8",
+    title: "Fidélité SUPREMYX lv2",
     description: "Participation à 5 tournois consécutifs",
     prize: "Bonus mystère",
     icon: <Gift className="size-6" />,
