@@ -115,10 +115,6 @@ export function Header() {
             >
               Règles
             </Link>
-            <Button size="lg" className="w-full gap-2 sm:w-auto" onClick={onOpenRegistration}>
-              <Target className="size-5" />
-              S&apos;inscrire
-            </Button>
             <Button asChild className="mt-2 w-full sm:hidden">
               <Link href="https://discord.gg/bT49UQFUMt" target="_blank" rel="noopener noreferrer">
                 Rejoindre Discord
