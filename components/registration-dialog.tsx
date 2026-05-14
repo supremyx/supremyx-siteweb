@@ -1,7 +1,5 @@
 "use client"
 
-import { supabase } from '@/lib/supabase'
-
 import { useState } from "react"
 import {
   Dialog,
@@ -36,25 +34,6 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
 
     // Simulate API call
     
-const { error } = await supabase
-  .from('teams')
-  .insert([
-    {
-      team_name: formData.team,
-      player: formData.player,
-      pubg_id: formData.pubgId,
-      phone: formData.phone,
-    }
-  ])
-
-if (error) {
-  console.error("SUPABASE ERROR:", error)
-  alert("Erreur ❌")
-} else {
-  console.log("SUCCESS:", data)
-  alert("Inscription réussie ✅")
-}
-
     setFormState("success")
 
     // Reset after showing success
