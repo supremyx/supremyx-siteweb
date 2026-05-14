@@ -4,87 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Calendar, Users, Trophy, Clock } from "lucide-react"
-
-interface Tournament {
-  id: string
-  name: string
-  date: string
-  time: string
-  prize: string
-  slots: number
-  registered: number
-  status: "open" | "full" | "upcoming" | "live"
-  type: "solo" | "duo" | "squad"
-}
-
-const tournaments: Tournament[] = [
-  {
-    id: "1",
-    name: "Clan Battles League CI (CBL1)",
-    date: "23 Mai 2026",
-    time: "20h00",
-    prize: "20000 FCFA",
-    slots: 20,
-    registered: 0,
-    status: "open",
-    type: "squad",
-  },
-  {
-    id: "2",
-    name: "Tournois Duo Masters",
-    date: "26 Mai 2026",
-    time: "20h00",
-    prize: "6000 FCFA",
-    slots: 50,
-    registered: 0,
-    status: "open",
-    type: "duo",
-  },
-  {
-    id: "3",
-    name: "Tournois Solo Champion",
-    date: "28 Mai 2026",
-    time: "20h00",
-    prize: "3000 FCFA",
-    slots: 100,
-    registered: 0,
-    status: "open",
-    type: "solo",
-  },
-  {
-    id: "4",
-    name: "Weekend Warriors",
-    date: "Bientôt",
-    time: "",
-    prize: "",
-    slots: 25,
-    registered: 0,
-    status: "upcoming",
-    type: "squad",
-  },
-  {
-    id: "5",
-    name: "Elite Rush League CI (ERL1)",
-    date: "Bientôt",
-    time: "",
-    prize: "",
-    slots: 24,
-    registered: 0,
-    status: "upcoming",
-    type: "squad",
-  },
-  {
-    id: "6",
-    name: "NexDominion League Africa",
-    date: "",
-    time: "",
-    prize: "",
-    slots: Infinity,
-    registered: 0,
-    status: "upcoming",
-    type: "squad",
-  },
-]
+import { tournaments, type Tournament } from "@/lib/tournaments-data"
 
 interface TournamentsSectionProps {
   onOpenRegistration: () => void
@@ -157,19 +77,21 @@ function TournamentCard({
         <CardDescription className="flex items-center gap-4 pt-2">
           <span className="flex items-center gap-1">
             <Calendar className="size-4" />
-            {tournament.date}
+            {tournament.date || "Date à venir"}
           </span>
-          <span className="flex items-center gap-1">
-            <Clock className="size-4" />
-            {tournament.time}
-          </span>
+          {tournament.time && (
+            <span className="flex items-center gap-1">
+              <Clock className="size-4" />
+              {tournament.time}
+            </span>
+          )}
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Trophy className="size-5 text-primary" />
-            <span className="font-semibold">{tournament.prize}</span>
+            <span className="font-semibold">{tournament.prize || "À définir"}</span>
           </div>
           {getTypeBadge(tournament.type)}
         </div>
@@ -181,13 +103,13 @@ function TournamentCard({
               Places
             </span>
             <span className="font-medium">
-              {tournament.registered}/{tournament.slots}
+              {tournament.registered}/{tournament.slots === Infinity ? "∞" : tournament.slots}
             </span>
           </div>
           <div className="h-2 overflow-hidden rounded-full bg-secondary">
             <div
               className="h-full rounded-full bg-primary transition-all"
-              style={{ width: `${progress}%` }}
+              style={{ width: `${tournament.slots === Infinity ? 0 : progress}%` }}
             />
           </div>
         </div>
