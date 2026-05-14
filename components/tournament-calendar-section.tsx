@@ -6,38 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Trophy, Users, Clock, CalendarDays } from "lucide-react"
 import { cn } from "@/lib/utils"
-
-interface TournamentEvent {
-  date: Date
-  name: string
-  time: string
-  type: "solo" | "duo" | "squad"
-  prize: string
-}
-
-const tournamentEvents: TournamentEvent[] = [
-  {
-    date: new Date(2026, 4, 23),
-    name: "Clan Battles League CI",
-    time: "20h00",
-    type: "squad",
-    prize: "20000 FCFA",
-  },
-  {
-    date: new Date(2026, 4, 26),
-    name: "Tournois Duo Masters",
-    time: "20h00",
-    type: "duo",
-    prize: "6000 FCFA",
-  },
-  {
-    date: new Date(2026, 4, 28),
-    name: "Tournois Solo Champion",
-    time: "20h00",
-    type: "solo",
-    prize: "3000 FCFA",
-  },
-]
+import { getTournamentsForDate, getTournamentsForMonth, type Tournament } from "@/lib/tournaments-data"
 
 const MONTHS_FR = [
   "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
@@ -72,24 +41,17 @@ export function TournamentCalendarSection() {
     setSelectedDate(null)
   }
 
-  const getTournamentsForDate = (day: number) => {
-    return tournamentEvents.filter(event => {
-      return event.date.getFullYear() === year &&
-             event.date.getMonth() === month &&
-             event.date.getDate() === day
-    })
+  // Utilise les données centralisées
+  const getTournamentsForDay = (day: number): Tournament[] => {
+    return getTournamentsForDate(new Date(year, month, day))
   }
 
-  const getTournamentsForSelectedDate = () => {
+  const getTournamentsForSelectedDate = (): Tournament[] => {
     if (!selectedDate) return []
-    return tournamentEvents.filter(event => {
-      return event.date.getFullYear() === selectedDate.getFullYear() &&
-             event.date.getMonth() === selectedDate.getMonth() &&
-             event.date.getDate() === selectedDate.getDate()
-    })
+    return getTournamentsForDate(selectedDate)
   }
 
-  const getTypeBadgeColor = (type: TournamentEvent["type"]) => {
+  const getTypeBadgeColor = (type: Tournament["type"]) => {
     switch (type) {
       case "solo":
         return "bg-yellow-500/20 text-yellow-400 border-yellow-500/30"
@@ -113,7 +75,7 @@ export function TournamentCalendarSection() {
 
     // Add cells for each day of the month
     for (let day = 1; day <= daysInMonth; day++) {
-      const tournaments = getTournamentsForDate(day)
+      const tournaments = getTournamentsForDay(day)
       const hasTournament = tournaments.length > 0
       const isToday = today.getFullYear() === year && today.getMonth() === month && today.getDate() === day
       const isSelected = selectedDate?.getFullYear() === year && 
@@ -254,9 +216,9 @@ export function TournamentCalendarSection() {
               {selectedDate ? (
                 selectedTournaments.length > 0 ? (
                   <div className="space-y-4">
-                    {selectedTournaments.map((tournament, index) => (
+                    {selectedTournaments.map((tournament) => (
                       <div
-                        key={index}
+                        key={tournament.id}
                         className="rounded-lg border bg-card p-4 space-y-3"
                       >
                         <div className="flex items-start justify-between gap-2">
@@ -273,6 +235,10 @@ export function TournamentCalendarSection() {
                           <span className="flex items-center gap-1">
                             <Trophy className="size-4 text-primary" />
                             {tournament.prize}
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <Users className="size-4" />
+                            {tournament.registered}/{tournament.slots === Infinity ? "∞" : tournament.slots} places
                           </span>
                         </div>
                       </div>
