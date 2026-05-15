@@ -3,8 +3,8 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Calendar, Users, Trophy, Clock } from "lucide-react"
-import { tournaments, type Tournament } from "@/lib/tournaments-data"
+import { Calendar, Users, Trophy, Clock, Repeat } from "lucide-react"
+import { tournaments, type Tournament, formatWeeklySchedule } from "@/lib/tournaments-data"
 
 interface TournamentsSectionProps {
   onOpenRegistration: () => void
@@ -74,11 +74,17 @@ function TournamentCard({
           <CardTitle className="text-lg">{tournament.name}</CardTitle>
           {getStatusBadge(tournament.status)}
         </div>
-        <CardDescription className="flex items-center gap-4 pt-2">
+        <CardDescription className="flex flex-col gap-2 pt-2">
           <span className="flex items-center gap-1">
             <Calendar className="size-4" />
             {tournament.date || "Date à venir"}
           </span>
+          {tournament.weeklySchedule?.enabled && (
+            <span className="flex items-center gap-1 text-primary">
+              <Repeat className="size-4" />
+              {formatWeeklySchedule(tournament.weeklySchedule)}
+            </span>
+          )}
           {tournament.time && (
             <span className="flex items-center gap-1">
               <Clock className="size-4" />
