@@ -2,12 +2,14 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Target } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
+import { RegistrationDialog } from "@/components/registration-dialog"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [registrationOpen, setRegistrationOpen] = useState(false)
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-card/80 backdrop-blur-xl">
@@ -61,6 +63,10 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
+          <Button className="hidden sm:inline-flex" onClick={() => setRegistrationOpen(true)}>
+            <Target className="mr-2 size-4" />
+            S&apos;inscrire
+          </Button>
           <Button asChild className="hidden sm:inline-flex">
             <Link href="https://discord.gg/bT49UQFUMt" target="_blank" rel="noopener noreferrer">
               Rejoindre Discord
@@ -120,9 +126,15 @@ export function Header() {
                 Rejoindre Discord
               </Link>
             </Button>
+            <Button className="mt-2 w-full sm:hidden" onClick={() => { setRegistrationOpen(true); setMobileMenuOpen(false); }}>
+              <Target className="mr-2 size-4" />
+              S&apos;inscrire
+            </Button>
           </nav>
         </div>
       )}
+
+      <RegistrationDialog open={registrationOpen} onOpenChange={setRegistrationOpen} />
     </header>
   )
 }
