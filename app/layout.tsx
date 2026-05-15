@@ -1,11 +1,15 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { ThemeProvider } from 'next-themes'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Supremyx - Modern Web Solutions',
-  description: 'Professional web solutions built with Next.js and modern technologies',
-  viewport: 'width=device-width, initial-scale=1',
+  title: 'SUPREMYX CI - Plateforme Esport PUBG Mobile',
+  description: 'La première plateforme esport PUBG Mobile de Côte d\'Ivoire. Tournois automatiques, classement en temps réel, et une communauté de passionnés.',
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
@@ -14,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning className="bg-background">
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}

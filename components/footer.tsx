@@ -11,7 +11,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg bg-primary">
                 <Image 
-                  src="Logo1 Supremyx.png" 
+                  src="/placeholder-logo.svg" 
                   alt="SUPREMYX Logo" 
                   width={40}
                   height={40}
@@ -29,11 +29,31 @@ export function Footer() {
 
           {/* Links */}
           <div>
-            <h3 className="mb-4 font-semibold"></h3>
+            <h3 className="mb-4 font-semibold">Navigation</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href="#tournois" className="transition-colors hover:text-foreground">
-                  
+                <Link href="/tournois" className="transition-colors hover:text-foreground">
+                  Tournois
+                </Link>
+              </li>
+              <li>
+                <Link href="/equipes" className="transition-colors hover:text-foreground">
+                  Équipes
+                </Link>
+              </li>
+              <li>
+                <Link href="/classement" className="transition-colors hover:text-foreground">
+                  Classement
+                </Link>
+              </li>
+              <li>
+                <Link href="/recompenses" className="transition-colors hover:text-foreground">
+                  Récompenses
+                </Link>
+              </li>
+              <li>
+                <Link href="/regles" className="transition-colors hover:text-foreground">
+                  Règles
                 </Link>
               </li>
             </ul>
