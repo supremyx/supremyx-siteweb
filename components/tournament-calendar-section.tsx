@@ -4,9 +4,9 @@ import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, Trophy, Users, Clock, CalendarDays } from "lucide-react"
+import { ChevronLeft, ChevronRight, Trophy, Users, Clock, CalendarDays, Repeat } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { getTournamentsForDate, getTournamentsForMonth, type Tournament } from "@/lib/tournaments-data"
+import { getTournamentsForDate, getTournamentsForMonth, type Tournament, formatWeeklySchedule } from "@/lib/tournaments-data"
 
 const MONTHS_FR = [
   "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
@@ -194,6 +194,10 @@ export function TournamentCalendarSection() {
                   <div className="size-3 rounded-full bg-purple-500" />
                   <span className="text-sm text-muted-foreground">Squad</span>
                 </div>
+                <div className="flex items-center gap-2">
+                  <Repeat className="size-3 text-primary" />
+                  <span className="text-sm text-muted-foreground">Hebdomadaire</span>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -216,7 +220,7 @@ export function TournamentCalendarSection() {
               {selectedDate ? (
                 selectedTournaments.length > 0 ? (
                   <div className="space-y-4">
-                    {selectedTournaments.map((tournament) => (
+                      {selectedTournaments.map((tournament) => (
                       <div
                         key={tournament.id}
                         className="rounded-lg border bg-card p-4 space-y-3"
@@ -227,6 +231,17 @@ export function TournamentCalendarSection() {
                             {tournament.type.charAt(0).toUpperCase() + tournament.type.slice(1)}
                           </Badge>
                         </div>
+                        
+                        {/* Indicateur de répétition hebdomadaire */}
+                        {tournament.weeklySchedule?.enabled && (
+                          <div className="flex items-center gap-2 text-xs">
+                            <Repeat className="size-3 text-primary" />
+                            <span className="text-primary font-medium">
+                              {formatWeeklySchedule(tournament.weeklySchedule)}
+                            </span>
+                          </div>
+                        )}
+                        
                         <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
                           <span className="flex items-center gap-1">
                             <Clock className="size-4" />
