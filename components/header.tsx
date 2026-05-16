@@ -87,12 +87,6 @@ export function Header() {
         <div className="border-t border-border/50 bg-card md:hidden">
           <nav className="flex flex-col gap-1 p-4">
             <Link
-              href="/tournois"
-              className="rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-            </Link>
-            <Link
               href="/equipes"
               className="rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary"
               onClick={() => setMobileMenuOpen(false)}
