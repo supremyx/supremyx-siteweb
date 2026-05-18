@@ -8,6 +8,8 @@ import { ChevronLeft, ChevronRight, Trophy, Users, Clock, CalendarDays, Repeat }
 import { cn } from "@/lib/utils"
 import { getTournamentsForDate, type Tournament, formatWeeklySchedule } from "@/lib/tournaments-data"
 import { RegistrationDialog } from "@/components/registration-dialog"
+import { SignupDialog } from "@/components/signup-dialog"
+import { useAuth } from "@/contexts/auth-context"
 
 const MONTHS_FR = [
   "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
@@ -17,10 +19,13 @@ const MONTHS_FR = [
 const DAYS_FR = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"]
 
 export function TournamentCalendarSection() {
+  const { isAuthenticated } = useAuth()
   const [currentDate, setCurrentDate] = useState(new Date(2026, 4, 1))
   const [selectedDate, setSelectedDate] = useState<Date | null>(null)
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false)
+  const [isSignupOpen, setIsSignupOpen] = useState(false)
   const [selectedTournament, setSelectedTournament] = useState<Tournament | null>(null)
+  const [pendingTournament, setPendingTournament] = useState<Tournament | null>(null)
 
   const year = currentDate.getFullYear()
   const month = currentDate.getMonth()
@@ -55,8 +60,27 @@ export function TournamentCalendarSection() {
   }
 
   const handleOpenRegistration = (tournament: Tournament) => {
-    setSelectedTournament(tournament)
-    setIsRegistrationOpen(true)
+    if (!isAuthenticated) {
+      // Si l'utilisateur n'est pas connecté, ouvrir le dialogue de connexion/inscription
+      setPendingTournament(tournament)
+      setIsSignupOpen(true)
+    } else {
+      // Si l'utilisateur est connecté, ouvrir directement le dialogue d'inscription au tournoi
+      setSelectedTournament(tournament)
+      setIsRegistrationOpen(true)
+    }
+  }
+
+  const handleSignupClose = (open: boolean) => {
+    setIsSignupOpen(open)
+    if (!open && isAuthenticated && pendingTournament) {
+      // Si l'utilisateur vient de se connecter/inscrire et qu'un tournoi était en attente
+      setSelectedTournament(pendingTournament)
+      setIsRegistrationOpen(true)
+      setPendingTournament(null)
+    } else if (!open) {
+      setPendingTournament(null)
+    }
   }
 
   const getTypeBadgeColor = (type: Tournament["type"]) => {
@@ -307,6 +331,11 @@ export function TournamentCalendarSection() {
         open={isRegistrationOpen} 
         onOpenChange={setIsRegistrationOpen}
         tournament={selectedTournament}
+      />
+
+      <SignupDialog
+        open={isSignupOpen}
+        onOpenChange={handleSignupClose}
       />
     </section>
   )
