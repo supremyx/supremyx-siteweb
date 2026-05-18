@@ -22,7 +22,6 @@ interface RegistrationDialogProps {
 export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogProps) {
   const [formState, setFormState] = useState<"idle" | "loading" | "success">("idle")
   const [formData, setFormData] = useState({
-    team: "",
     player: "",
     pubgId: "",
     phonenumber: "",
@@ -39,7 +38,7 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
     // Reset after showing success
     setTimeout(() => {
       setFormState("idle")
-      setFormData({ team: "", player: "", pubgId: "", phonenumber: "" })
+      setFormData({ player: "", pubgId: "", phonenumber: "" })
       onOpenChange(false)
     }, 2000)
   }
@@ -54,7 +53,7 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
             </div>
             <h3 className="text-xl font-bold">Inscription réussie !</h3>
             <p className="text-muted-foreground">
-              Votre équipe a été inscrite avec succès. Vous recevrez les détails du tournoi sur Discord.
+              Vous vous êtes inscrit avec succès. Vous recevrez les détails des tournois sur Discord.
             </p>
           </div>
         </DialogContent>
@@ -68,29 +67,15 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <Gamepad2 className="size-5 text-primary" />
-            Inscription équipe
+            Inscription joueur
           </DialogTitle>
           <DialogDescription>
-            Inscrivez votre équipe au prochain tournoi PUBG Mobile de SUPREMYX
+            Inscrivez-vous sur SUPREMYX
           </DialogDescription>
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="mt-4">
           <FieldGroup>
-            <Field>
-              <FieldLabel htmlFor="team">
-                <Users className="mr-2 inline size-4" />
-                Nom de l&apos;équipe
-              </FieldLabel>
-              <Input
-                id="team"
-                placeholder="Ex: CI Warriors"
-                value={formData.team}
-                onChange={(e) => setFormData({ ...formData, team: e.target.value })}
-                required
-              />
-            </Field>
-
             <Field>
               <FieldLabel htmlFor="player">
                 <User className="mr-2 inline size-4" />
@@ -122,7 +107,7 @@ export function RegistrationDialog({ open, onOpenChange }: RegistrationDialogPro
             <Field>
               <FieldLabel htmlFor="phonenumber">
                 <Phone className="mr-2 inline size-4" />
-                Numéro Mobile Money (WhatsApp)
+                Numéro Mobile
               </FieldLabel>
               <Input
                 id="phonenumber"
