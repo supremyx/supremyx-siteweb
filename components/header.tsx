@@ -68,7 +68,7 @@ export function Header() {
             S&apos;inscrire
           </Button>
           <Button asChild className="hidden sm:inline-flex">
-            <Link href="https://discord.gg/bT49UQFUMt" target="_blank" rel="noopener noreferrer">
+            <Link href="https://discord.gg/dqRcv6GyC7" target="_blank" rel="noopener noreferrer">
               Rejoindre Discord
             </Link>
           </Button>
@@ -115,7 +115,7 @@ export function Header() {
               Règles
             </Link>
             <Button asChild className="mt-2 w-full sm:hidden">
-              <Link href="https://discord.gg/bT49UQFUMt" target="_blank" rel="noopener noreferrer">
+              <Link href="https://discord.gg/dqRcv6GyC7" target="_blank" rel="noopener noreferrer">
                 Rejoindre Discord
               </Link>
             </Button>
