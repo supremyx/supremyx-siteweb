@@ -7,7 +7,7 @@ import { Calendar, Users, Trophy, Clock, Repeat } from "lucide-react"
 import { tournaments, type Tournament, formatWeeklySchedule } from "@/lib/tournaments-data"
 
 interface TournamentsSectionProps {
-  onOpenRegistration: () => void
+  onOpenRegistration: (tournament: Tournament) => void
 }
 
 export function TournamentsSection({ onOpenRegistration }: TournamentsSectionProps) {
@@ -28,7 +28,7 @@ export function TournamentsSection({ onOpenRegistration }: TournamentsSectionPro
             <TournamentCard
               key={tournament.id}
               tournament={tournament}
-              onRegister={onOpenRegistration}
+              onRegister={() => onOpenRegistration(tournament)}
             />
           ))}
         </div>
@@ -129,6 +129,8 @@ function TournamentCard({
             ? "Complet"
             : tournament.status === "live"
             ? "En cours"
+            : tournament.status === "upcoming"
+            ? "Bientôt disponible"
             : "S'inscrire"}
         </Button>
       </CardContent>
