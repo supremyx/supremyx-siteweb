@@ -3,14 +3,24 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Calendar, Users, Trophy, Clock, Repeat } from "lucide-react"
+import { Calendar, Users, Trophy, Clock, Repeat, Lock } from "lucide-react"
 import { tournaments, type Tournament, formatWeeklySchedule } from "@/lib/tournaments-data"
+import { useAuth } from "@/contexts/auth-context"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 interface TournamentsSectionProps {
   onOpenRegistration: (tournament: Tournament) => void
+  onOpenSignup: () => void
 }
 
-export function TournamentsSection({ onOpenRegistration }: TournamentsSectionProps) {
+export function TournamentsSection({ onOpenRegistration, onOpenSignup }: TournamentsSectionProps) {
+  const { isAuthenticated } = useAuth()
+
   return (
     <section id="tournois" className="py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -21,6 +31,12 @@ export function TournamentsSection({ onOpenRegistration }: TournamentsSectionPro
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
             Rejoignez nos compétitions et affrontez les meilleurs joueurs de Côte d&apos;Ivoire
           </p>
+          {!isAuthenticated && (
+            <p className="mt-2 text-sm text-amber-500">
+              <Lock className="mr-1 inline size-4" />
+              Vous devez créer un compte pour vous inscrire aux tournois
+            </p>
+          )}
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -28,7 +44,9 @@ export function TournamentsSection({ onOpenRegistration }: TournamentsSectionPro
             <TournamentCard
               key={tournament.id}
               tournament={tournament}
+              isAuthenticated={isAuthenticated}
               onRegister={() => onOpenRegistration(tournament)}
+              onOpenSignup={onOpenSignup}
             />
           ))}
         </div>
@@ -39,10 +57,14 @@ export function TournamentsSection({ onOpenRegistration }: TournamentsSectionPro
 
 function TournamentCard({
   tournament,
+  isAuthenticated,
   onRegister,
+  onOpenSignup,
 }: {
   tournament: Tournament
+  isAuthenticated: boolean
   onRegister: () => void
+  onOpenSignup: () => void
 }) {
   const getStatusBadge = (status: Tournament["status"]) => {
     switch (status) {
@@ -63,6 +85,32 @@ function TournamentCard({
   }
 
   const progress = (tournament.registered / tournament.slots) * 100
+
+  const canRegister = tournament.status === "open"
+  const isDisabled = tournament.status === "full" || tournament.status === "live" || tournament.status === "upcoming"
+
+  const handleClick = () => {
+    if (!isAuthenticated) {
+      onOpenSignup()
+    } else {
+      onRegister()
+    }
+  }
+
+  const getButtonContent = () => {
+    if (tournament.status === "full") return "Complet"
+    if (tournament.status === "live") return "En cours"
+    if (tournament.status === "upcoming") return "Bientôt disponible"
+    if (!isAuthenticated) {
+      return (
+        <>
+          <Lock className="mr-2 size-4" />
+          Créer un compte
+        </>
+      )
+    }
+    return "S'inscrire"
+  }
 
   return (
     <Card className="group relative overflow-hidden transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
@@ -120,19 +168,25 @@ function TournamentCard({
           </div>
         </div>
 
-        <Button
-          className="w-full"
-          disabled={tournament.status === "full" || tournament.status === "live" || tournament.status === "upcoming"}
-          onClick={onRegister}
-        >
-          {tournament.status === "full"
-            ? "Complet"
-            : tournament.status === "live"
-            ? "En cours"
-            : tournament.status === "upcoming"
-            ? "Bientôt disponible"
-            : "S'inscrire"}
-        </Button>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                className="w-full"
+                disabled={isDisabled}
+                variant={!isAuthenticated && canRegister ? "outline" : "default"}
+                onClick={handleClick}
+              >
+                {getButtonContent()}
+              </Button>
+            </TooltipTrigger>
+            {!isAuthenticated && canRegister && (
+              <TooltipContent>
+                <p>Créez un compte pour vous inscrire aux tournois</p>
+              </TooltipContent>
+            )}
+          </Tooltip>
+        </TooltipProvider>
       </CardContent>
     </Card>
   )
