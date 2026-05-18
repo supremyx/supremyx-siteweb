@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button"
 import { Trophy, Users, Zap, Target } from "lucide-react"
 
 interface HeroSectionProps {
-  onOpenRegistration: () => void
+  onOpenSignup: () => void
 }
 
-export function HeroSection({ onOpenRegistration }: HeroSectionProps) {
+export function HeroSection({ onOpenSignup }: HeroSectionProps) {
   return (
     <section className="relative overflow-hidden">
       {/* Background Effects */}
@@ -38,7 +38,7 @@ export function HeroSection({ onOpenRegistration }: HeroSectionProps) {
 
           {/* CTA Buttons */}
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button size="lg" className="w-full gap-2 sm:w-auto" onClick={onOpenRegistration}>
+            <Button size="lg" className="w-full gap-2 sm:w-auto" onClick={onOpenSignup}>
               <Target className="size-5" />
               S&apos;inscrire maintenant
             </Button>

@@ -7,17 +7,28 @@ import { TournamentsSection } from "@/components/tournaments-section"
 import { TournamentCalendarSection } from "@/components/tournament-calendar-section"
 import { Footer } from "@/components/footer"
 import { RegistrationDialog } from "@/components/registration-dialog"
-import { type Tournament, tournaments } from "@/lib/tournaments-data"
+import { SignupDialog } from "@/components/signup-dialog"
+import { type Tournament } from "@/lib/tournaments-data"
+import { useAuth } from "@/contexts/auth-context"
 
 export default function Home() {
   const [registrationOpen, setRegistrationOpen] = useState(false)
+  const [signupOpen, setSignupOpen] = useState(false)
   const [selectedTournament, setSelectedTournament] = useState<Tournament | null>(null)
+  const { isAuthenticated } = useAuth()
 
-  const handleOpenRegistration = (tournament?: Tournament) => {
-    // Si un tournoi est passé, on l'utilise, sinon on prend le premier tournoi ouvert
-    const tournamentToUse = tournament || tournaments.find(t => t.status === "open") || null
-    setSelectedTournament(tournamentToUse)
+  const handleOpenRegistration = (tournament: Tournament) => {
+    // Si l'utilisateur n'est pas connecté, ouvrir le formulaire d'inscription
+    if (!isAuthenticated) {
+      setSignupOpen(true)
+      return
+    }
+    setSelectedTournament(tournament)
     setRegistrationOpen(true)
+  }
+
+  const handleOpenSignup = () => {
+    setSignupOpen(true)
   }
 
   return (
@@ -25,8 +36,11 @@ export default function Home() {
       <Header />
       
       <main className="flex-1">
-        <HeroSection onOpenRegistration={() => handleOpenRegistration()} />
-        <TournamentsSection onOpenRegistration={handleOpenRegistration} />
+        <HeroSection onOpenSignup={handleOpenSignup} />
+        <TournamentsSection 
+          onOpenRegistration={handleOpenRegistration} 
+          onOpenSignup={handleOpenSignup}
+        />
         <TournamentCalendarSection />
       </main>
 
@@ -36,6 +50,11 @@ export default function Home() {
         open={registrationOpen} 
         onOpenChange={setRegistrationOpen}
         tournament={selectedTournament}
+      />
+
+      <SignupDialog
+        open={signupOpen}
+        onOpenChange={setSignupOpen}
       />
     </div>
   )

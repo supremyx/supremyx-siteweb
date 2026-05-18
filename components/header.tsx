@@ -2,14 +2,23 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X, Target } from "lucide-react"
+import { Menu, X, Target, LogOut, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
-import { RegistrationDialog } from "@/components/registration-dialog"
+import { SignupDialog } from "@/components/signup-dialog"
+import { useAuth } from "@/contexts/auth-context"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [registrationOpen, setRegistrationOpen] = useState(false)
+  const [signupOpen, setSignupOpen] = useState(false)
+  const { user, isAuthenticated, logout } = useAuth()
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-card/80 backdrop-blur-xl">
@@ -63,10 +72,31 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <Button className="hidden sm:inline-flex" onClick={() => setRegistrationOpen(true)}>
-            <Target className="mr-2 size-4" />
-            S&apos;inscrire
-          </Button>
+          {isAuthenticated ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" className="hidden gap-2 sm:inline-flex">
+                  <User className="size-4" />
+                  {user?.pseudo}
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem disabled>
+                  <span className="text-muted-foreground">{user?.email}</span>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={logout} className="text-destructive">
+                  <LogOut className="mr-2 size-4" />
+                  Se déconnecter
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            <Button className="hidden sm:inline-flex" onClick={() => setSignupOpen(true)}>
+              <Target className="mr-2 size-4" />
+              S&apos;inscrire
+            </Button>
+          )}
           <Button asChild className="hidden sm:inline-flex">
             <Link href="https://discord.gg/dqRcv6GyC7" target="_blank" rel="noopener noreferrer">
               Rejoindre Discord
@@ -119,15 +149,26 @@ export function Header() {
                 Rejoindre Discord
               </Link>
             </Button>
-            <Button className="mt-2 w-full sm:hidden" onClick={() => { setRegistrationOpen(true); setMobileMenuOpen(false); }}>
-              <Target className="mr-2 size-4" />
-              S&apos;inscrire
-            </Button>
+            {isAuthenticated ? (
+              <Button 
+                variant="outline" 
+                className="mt-2 w-full sm:hidden" 
+                onClick={() => { logout(); setMobileMenuOpen(false); }}
+              >
+                <LogOut className="mr-2 size-4" />
+                Se déconnecter ({user?.pseudo})
+              </Button>
+            ) : (
+              <Button className="mt-2 w-full sm:hidden" onClick={() => { setSignupOpen(true); setMobileMenuOpen(false); }}>
+                <Target className="mr-2 size-4" />
+                S&apos;inscrire
+              </Button>
+            )}
           </nav>
         </div>
       )}
 
-      <RegistrationDialog open={registrationOpen} onOpenChange={setRegistrationOpen} />
+      <SignupDialog open={signupOpen} onOpenChange={setSignupOpen} />
     </header>
   )
 }
