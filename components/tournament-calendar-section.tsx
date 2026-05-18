@@ -6,7 +6,8 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Trophy, Users, Clock, CalendarDays, Repeat } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { getTournamentsForDate, getTournamentsForMonth, type Tournament, formatWeeklySchedule } from "@/lib/tournaments-data"
+import { getTournamentsForDate, type Tournament, formatWeeklySchedule } from "@/lib/tournaments-data"
+import { RegistrationDialog } from "@/components/registration-dialog"
 
 const MONTHS_FR = [
   "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
@@ -18,6 +19,8 @@ const DAYS_FR = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"]
 export function TournamentCalendarSection() {
   const [currentDate, setCurrentDate] = useState(new Date(2026, 4, 1))
   const [selectedDate, setSelectedDate] = useState<Date | null>(null)
+  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false)
+  const [selectedTournament, setSelectedTournament] = useState<Tournament | null>(null)
 
   const year = currentDate.getFullYear()
   const month = currentDate.getMonth()
@@ -49,6 +52,11 @@ export function TournamentCalendarSection() {
   const getTournamentsForSelectedDate = (): Tournament[] => {
     if (!selectedDate) return []
     return getTournamentsForDate(selectedDate)
+  }
+
+  const handleOpenRegistration = (tournament: Tournament) => {
+    setSelectedTournament(tournament)
+    setIsRegistrationOpen(true)
   }
 
   const getTypeBadgeColor = (type: Tournament["type"]) => {
@@ -249,13 +257,28 @@ export function TournamentCalendarSection() {
                           </span>
                           <span className="flex items-center gap-1">
                             <Trophy className="size-4 text-primary" />
-                            {tournament.prize}
+                            {tournament.prize || "À définir"}
                           </span>
                           <span className="flex items-center gap-1">
                             <Users className="size-4" />
                             {tournament.registered}/{tournament.slots === Infinity ? "∞" : tournament.slots} places
                           </span>
                         </div>
+
+                        <Button
+                          className="w-full mt-2"
+                          size="sm"
+                          disabled={tournament.status === "full" || tournament.status === "live" || tournament.status === "upcoming"}
+                          onClick={() => handleOpenRegistration(tournament)}
+                        >
+                          {tournament.status === "full"
+                            ? "Complet"
+                            : tournament.status === "live"
+                            ? "En cours"
+                            : tournament.status === "upcoming"
+                            ? "Bientôt disponible"
+                            : "S'inscrire"}
+                        </Button>
                       </div>
                     ))}
                   </div>
@@ -279,6 +302,12 @@ export function TournamentCalendarSection() {
           </Card>
         </div>
       </div>
+
+      <RegistrationDialog 
+        open={isRegistrationOpen} 
+        onOpenChange={setIsRegistrationOpen}
+        tournament={selectedTournament}
+      />
     </section>
   )
 }

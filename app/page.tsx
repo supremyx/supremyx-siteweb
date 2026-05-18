@@ -7,17 +7,26 @@ import { TournamentsSection } from "@/components/tournaments-section"
 import { TournamentCalendarSection } from "@/components/tournament-calendar-section"
 import { Footer } from "@/components/footer"
 import { RegistrationDialog } from "@/components/registration-dialog"
+import { type Tournament, tournaments } from "@/lib/tournaments-data"
 
 export default function Home() {
   const [registrationOpen, setRegistrationOpen] = useState(false)
+  const [selectedTournament, setSelectedTournament] = useState<Tournament | null>(null)
+
+  const handleOpenRegistration = (tournament?: Tournament) => {
+    // Si un tournoi est passé, on l'utilise, sinon on prend le premier tournoi ouvert
+    const tournamentToUse = tournament || tournaments.find(t => t.status === "open") || null
+    setSelectedTournament(tournamentToUse)
+    setRegistrationOpen(true)
+  }
 
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
       
       <main className="flex-1">
-        <HeroSection onOpenRegistration={() => setRegistrationOpen(true)} />
-        <TournamentsSection onOpenRegistration={() => setRegistrationOpen(true)} />
+        <HeroSection onOpenRegistration={() => handleOpenRegistration()} />
+        <TournamentsSection onOpenRegistration={handleOpenRegistration} />
         <TournamentCalendarSection />
       </main>
 
@@ -25,7 +34,8 @@ export default function Home() {
 
       <RegistrationDialog 
         open={registrationOpen} 
-        onOpenChange={setRegistrationOpen} 
+        onOpenChange={setRegistrationOpen}
+        tournament={selectedTournament}
       />
     </div>
   )
