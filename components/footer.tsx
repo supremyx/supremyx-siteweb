@@ -45,7 +45,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <Link
-                  href="https://discord.gg/bT49UQFUMt"
+                  href="https://discord.gg/dqRcv6GyC7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors hover:text-foreground"
@@ -85,7 +85,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="https://discord.gg/bT49UQFUMt"
+                  href="https://discord.gg/dqRcv6GyC7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors hover:text-foreground"
